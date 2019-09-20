@@ -55,12 +55,14 @@ namespace Xamarin.Forms.Platform.Android
 
 		public void Add(AView attachedView)
 		{
-			_attach(_instance, attachedView);
+			if(_attach != null)
+				_attach(_instance, attachedView);
 		}
 
 		public void Remove(AView attachedView)
 		{
-			_detach(_instance, attachedView);
+			if(_detach != null)
+				_detach(_instance, attachedView);
 		}
 	}
 }
